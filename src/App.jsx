@@ -1,3 +1,4 @@
+import StyleInjector from './components/StyleInjector';
 import React from 'react';
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
@@ -8,6 +9,7 @@ import CartOverlay from './components/CartOverlay';
 import { CartProvider } from './components/CartContext';
 const Layout = ({ data, children }) => (
 <div className="min-h-screen bg-[var(--color-background)]">
+      <StyleInjector siteSettings={data['site_settings']} />
 <Header data={data.basisgegevens || Object.values(data)[0]} siteSettings={data.site_settings} />
 <main className="pt-20">{children}</main>
 <Footer siteSettings={data.site_settings} />

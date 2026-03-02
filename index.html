@@ -12,15 +12,16 @@
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <title>urban-soles</title>
-    <script type="module" crossorigin src="/urban-soles/assets/index-BgtT9efg.js"></script>
-    <link rel="stylesheet" crossorigin href="/urban-soles/assets/index-BYNVrASq.css">
+    <script type="module" crossorigin src="/urban-soles/assets/index-C5IiMZ7f.js"></script>
+    <link rel="stylesheet" crossorigin href="/urban-soles/assets/index-CUYIyts8.css">
   </head>
   <body>
     <div id="root"></div>
     <script>
-      if ('serviceWorker' in navigator) {
+      if ('serviceWorker' in navigator && window.location.hostname !== 'localhost') {
         window.addEventListener('load', () => {
-          navigator.serviceWorker.register('./sw.js').catch(err => console.log('SW registration failed: ', err));
+          const swPath = './sw.js';
+          navigator.serviceWorker.register(swPath).catch(err => console.log('SW registration failed: ', err));
         });
       }
     </script>

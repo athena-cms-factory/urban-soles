@@ -5,11 +5,11 @@ export default function Footer({ data }) {
   const settings = Array.isArray(settingsSource) ? (settingsSource[0] || {}) : settingsSource;
   const contactInfo = data?.contact?.[0] || {};
   
-  const naam = settings.site_name || 'urban-soles';
-  const email = contactInfo.email || settings.email || '';
-  const locatie = contactInfo.location || '';
-  const btw = contactInfo.btw_nummer || contactInfo.btw || '';
-  const linkedin = contactInfo.linkedin_url || contactInfo.linkedin || '';
+  const naam = settings.site_name || 'Urban Soles';
+  const email = contactInfo.email || settings.email || 'hello@urbansoles.com';
+  const locatie = contactInfo.location || 'Sneakerstraat 42, 1011 AB Amsterdam';
+  const btw = contactInfo.btw_nummer || contactInfo.btw || 'BE 0123.456.789';
+  const linkedin = contactInfo.linkedin_url || contactInfo.linkedin || 'https://linkedin.com/company/urbansoles';
 
   const getImageUrl = (url) => {
     if (!url) return '';
@@ -34,11 +34,9 @@ export default function Footer({ data }) {
             <h3 className="text-4xl font-serif font-bold text-white tracking-tight">
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-slate-400" data-dock-type="text" data-dock-bind="site_settings.0.site_name">{naam}</span>
             </h3>
-            {settings.tagline && (
-              <p className="text-lg leading-relaxed font-light text-slate-400 max-w-sm">
-                <span data-dock-type="text" data-dock-bind="site_settings.0.tagline">{settings.tagline}</span>
-              </p>
-            )}
+            <p className="text-lg leading-relaxed font-light text-slate-400 max-w-sm">
+              <span data-dock-type="text" data-dock-bind="site_settings.0.tagline">{settings.tagline || 'Premium sneakers voor de urban lifestyle. Loop met stijl en comfort.'}</span>
+            </p>
           </div>
 
           {/* Contact Details */}

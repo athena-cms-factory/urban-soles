@@ -16,7 +16,8 @@ export default function Footer({ data }) {
     if (typeof url === 'object') url = url.text || url.url || '';
     if (url.startsWith('http') || url.startsWith('data:') || url.startsWith('/')) return url;
     const base = import.meta.env.BASE_URL || '/';
-    const path = url.startsWith('images/') ? url : `images/${url}`;
+    const rootAsset = url === 'athena-icon.svg' || url === 'site-logo.svg';
+    const path = url.startsWith('images/') || rootAsset ? url : `images/${url}`;
     return (base + '/' + path).replace(new RegExp('/+', 'g'), '/');
   };
 

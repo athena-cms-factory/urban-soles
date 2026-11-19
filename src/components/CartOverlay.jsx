@@ -49,16 +49,16 @@ const CartOverlay = () => {
                   </span>
                 </div>
                 
-                <div className="flex items-center bg-slate-50 rounded-full px-2 py-1 border border-slate-100">
+                <div className="flex items-center bg-slate-50 rounded-full px-2 py-1 border border-slate-100 dark:bg-white/5 dark:border-white/10">
                   <button 
-                    className="w-8 h-8 flex items-center justify-center rounded-full hover:bg-white hover:shadow-sm transition-all font-bold"
+                    className="w-8 h-8 flex items-center justify-center rounded-full hover:bg-white hover:shadow-sm dark:hover:bg-white/10 transition-all font-bold"
                     onClick={() => updateQuantity(item.id, -1)}
                   >
                     -
                   </button>
                   <span className="w-8 text-center font-bold text-sm">{item.quantity}</span>
                   <button 
-                    className="w-8 h-8 flex items-center justify-center rounded-full hover:bg-white hover:shadow-sm transition-all font-bold"
+                    className="w-8 h-8 flex items-center justify-center rounded-full hover:bg-white hover:shadow-sm dark:hover:bg-white/10 transition-all font-bold"
                     onClick={() => updateQuantity(item.id, 1)}
                   >
                     +
@@ -71,7 +71,7 @@ const CartOverlay = () => {
 
         {/* Footer */}
         {cart.length > 0 && (
-          <div className="p-8 bg-surface border-t border-slate-100">
+          <div className="p-8 bg-surface border-t border-slate-100 dark:border-white/10">
             <div className="flex justify-between items-end mb-8">
               <span className="text-secondary font-medium">Subtotaal</span>
               <span className="text-3xl font-black font-serif">

@@ -9,16 +9,10 @@ const StyleInjector = ({ siteSettings }) => {
 
   useLayoutEffect(() => {
     const root = document.documentElement;
-    const isDark = settings.theme === 'dark';
-
-    // 1. Theme Toggle
-    if (isDark) {
-      root.classList.add('dark');
-      root.style.colorScheme = 'dark';
-    } else {
-      root.classList.remove('dark');
-      root.style.colorScheme = 'light';
-    }
+    // Theme wordt beheerd door de header-toggle (localStorage + .dark op <html>).
+    // Respekteer die keuze: hier alleen de color-scheme synchroniseren.
+    const isDark = root.classList.contains('dark');
+    root.style.colorScheme = isDark ? 'dark' : 'light';
 
     // 2. Map Settings to CSS Variables
     const prefix = isDark ? 'dark_' : 'light_';
